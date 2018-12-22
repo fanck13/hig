@@ -109,6 +109,11 @@ function getCheckboxRulesByLegacyTheme(themeData, props) {
           borderColor: `${themeData["checkbox.disabled.borderColor"]}`
         }
       : {}),
+    ...(disabled && indeterminate
+      ? {
+          opacity: themeData["component.disabled.opacity"]
+        }
+      : {}),
     ...(disabled && checked && !indeterminate
       ? {
           backgroundColor: `${themeData["checkbox.backgroundColor"]}`,
